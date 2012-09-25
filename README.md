@@ -1,4 +1,10 @@
-## Important Obj-c
+# Obj-C iOS Calculator
+The Homework 1 my first iOS app from [NTU101-1 MMP Course](http://ntumpp.sodas.tw/)
+
+by NTU Michael Hsu
+
+## This homework's importance
+### some variable type
 1. ``NSString是self.display.text``
 2. ``NSNumber *Memory; ``
 3. ``NSString *Operator;``
@@ -24,7 +30,6 @@
 
 ```
 _Memory = [NSNumber numberWithDouble:[self.display.text doubleValue]];    
-
 ```
 ### String to NSString
 ```
@@ -37,7 +42,7 @@ NSLog(@"%f",result); //double
 NSLog(@"%@", self.Memory);  //NSNumber
 ```
 
-## Cocustion
+## Conclusions and Tips to follow
 1. ``@(…)`` is “boxed literal”   //Object
 2. 字串比較，不能用switch，用``[self.Operator isEqualToString:@"+"]``
 3. ``UIButton`` use ``sender.currentTitle``
