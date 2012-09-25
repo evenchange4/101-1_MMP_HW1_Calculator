@@ -3,6 +3,8 @@ The Homework 1 my first iOS app from [NTU101-1 MMP Course](http://ntumpp.sodas.t
 
 by NTU Michael Hsu
 
+![Foo](https://raw.github.com/evenchange4/101-1_MMP_HW1_Calculator/master/report/snapshot.png)
+
 ## This homework's importance
 ### some variable type
 1. ``NSString是self.display.text``
