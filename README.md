@@ -46,3 +46,6 @@ NSLog(@"%@", self.Memory);  //NSNumber
 1. ``@(…)`` is “boxed literal”   //Object
 2. 字串比較，不能用switch，用``[self.Operator isEqualToString:@"+"]``
 3. ``UIButton`` use ``sender.currentTitle``
+
+## Other Resources
+1. Stanford University Developing Apps for iOS on iTunes U
