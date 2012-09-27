@@ -61,7 +61,7 @@
     else if([self.Operator isEqualToString:@"/"]){
         result = [self.Memory doubleValue] / [self.display.text doubleValue];
     }
-    self.display.text = [NSString stringWithFormat:@"%f", result];
+    self.display.text = [NSString stringWithFormat:@"%g", result];
 }
 
 - (IBAction)btnac:(id)sender {
@@ -73,7 +73,9 @@
 }
 
 - (IBAction)btninverse:(id)sender {
-    
+    double checkValue;
+    checkValue = 0 - [self.display.text doubleValue];
+    self.display.text = [NSString stringWithFormat:@"%g", checkValue];
 }
 
 @end
