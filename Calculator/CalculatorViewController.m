@@ -38,15 +38,49 @@
 }
 
 - (IBAction)btnoperator:(UIButton *)sender {
+    _Operator = @"+";
+    
+    NSLog(@"Memory = %@", self.Memory);
+    
+    double result;
+    if ([self.Operator isEqualToString:@"+"]) {
+        //_Memory = [NSNumber numberWithDouble:0];
+        NSLog(@"+");
+        result = [self.Memory doubleValue] + [self.display.text doubleValue];
+    }
+    else if([self.Operator isEqualToString:@"-"]){
+        //_Memory = [NSNumber numberWithDouble:0];
+        NSLog(@"-");
+        result = [self.Memory doubleValue] - [self.display.text doubleValue];
+    }
+    else if([self.Operator isEqualToString:@"*"]){
+        //_Memory = [NSNumber numberWithDouble:1];
+        NSLog(@"*");
+        result = [self.Memory doubleValue] * [self.display.text doubleValue];
+    }
+    else if([self.Operator isEqualToString:@"/"]){
+        //_Memory = [NSNumber numberWithDouble:1];
+        NSLog(@"/");
+        result = [self.display.text doubleValue]/[self.Memory doubleValue];
+    }
+    
     _Operator = sender.currentTitle;
-    _Memory = [NSNumber numberWithDouble:[self.display.text doubleValue]];
-    self.display.text = @"0";
+    
+    self.display.text = [NSString stringWithFormat:@"%g", result];
+    NSLog(@"result = %g", result);
+    _Memory = [NSNumber numberWithDouble:result];
+    
+    //_Memory = [NSNumber numberWithDouble:[self.display.text doubleValue]];
+    //self.display.text = @"0";
     self.isUserFirstPressBtndigit = NO;
     self.isUserFirstPressBtndot = NO;
 }
 
 - (IBAction)btnenter:(id)sender {
-    NSLog(@"%@", self.Memory);
+    
+    NSLog(@"before enter Memory = %@", self.Memory);
+    NSLog(@"before enter Operator = %@", self.Operator);
+    
     double result;
     if ([self.Operator isEqualToString:@"+"]) {
         NSLog(@"+");
@@ -62,6 +96,11 @@
         result = [self.Memory doubleValue] / [self.display.text doubleValue];
     }
     self.display.text = [NSString stringWithFormat:@"%g", result];
+    
+    _Memory = [NSNumber numberWithDouble:0];
+    _Operator = @"+";
+    NSLog(@"after enter Memory = %@", self.Memory);
+    NSLog(@"after enter Operator = %@", self.Operator);
 }
 
 - (IBAction)btnac:(id)sender {
